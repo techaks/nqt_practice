@@ -1,5 +1,5 @@
 
-Q ----  Find the smallest element in an array
+Q ................................ Find the smallest element in an array...........................................
 ex-    1 2 3 4 5 ---- 1,2,3,4,5
 solution handle both case
 
@@ -24,3 +24,37 @@ int main() {
 
     cout << mn;
 }
+
+...........................................for finding maximum element.........................................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    string s;
+    getline(cin, s);
+
+    int maxi = INT_MIN;
+
+    for(char &ch : s){
+        if(!isdigit(ch))
+            ch = ' ';
+    }
+
+    stringstream ss(s);
+    int num;
+
+    while(ss >> num){
+        maxi = max(maxi, num);
+    }
+
+    cout << maxi;
+
+    return 0;
+}
+
+
+
+.................................................................................
