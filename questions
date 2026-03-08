@@ -1,1 +1,26 @@
-..
+
+Q ----  Find the smallest element in an array
+ex-    1 2 3 4 5 ---- 1,2,3,4,5
+solution handle both case
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+
+    string s;
+    getline(cin, s);
+
+    for(char &c : s){
+        if(!isdigit(c)) c = ' ';
+    }
+
+    stringstream ss(s);
+    int num, mn = INT_MAX;
+
+    while(ss >> num){
+        mn = min(mn, num);
+    }
+
+    cout << mn;
+}
