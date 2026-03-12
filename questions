@@ -87,3 +87,118 @@ int main(){
 
    
 }
+
+
+........................................................................................................................
+
+
+Problem Statement –
+
+Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve unit assignment problems before the lecture. Today he got one tricky question. The problem statement is “A positive integer has been given as an input. Convert decimal value to binary representation. 
+Toggle all bits of it after the most significant bit including the most significant bit. Print the positive integer value after toggling all bits”.
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+   
+   int num ;
+   cin >> num;
+
+   int res = 0 ;
+   int i = 0 ; // for power of two
+
+   while(num){
+    int r = num%2;
+    res+= pow(2,i)*(!r);
+    num = num /2;
+    i++;
+   }
+
+   cout << res;
+
+   
+}
+.....................................................................................................................
+Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to cycling with his friends. 
+So every time when the months starts he counts the number of sundays he will get to enjoy.
+Considering the month can start with any day, be it Sunday, Monday…. Or so on.
+Count the number of Sunday jack will get within n number of days.
+
+input - mon 22
+output - 3
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s; cin>>s;
+    int day,ans=0;
+    cin>>day;
+    unordered_map< string,int > m;
+    m["mon"]=6;m["tue"]=5;m["wed"]=4;
+    m["thu"]=3;m["fri"]=2;m["sat"]=1;
+    m["sun"]=0;
+
+    if(m[s] <= day ){
+        ans++;
+    }
+    day -= m[s];
+
+    while(day >=7){
+        day = day - 7;
+        ans++;
+    }
+
+    cout << ans;
+
+
+
+}
+
+
+.......................................................................................................................
+
+Airport security officials have confiscated several item of the passengers at the security check point.
+All the items have been dumped into a huge box (array). Each item possesses a certain amount of risk[0,1,2].
+Here, the risk severity of the items represent an array[] of N number of integer values.
+The task here is to sort the items based on their levels of risk in the array. The risk values range from 0 to 2.
+
+input ....
+7  -> Value of N
+[1,0,2,0,1,0,2]-> Element of arr
+Output :
+0 0 0 1 1 2 2  
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n ; 
+   cin >> n ;
+   vector<int>arr(n,0);
+
+   for(int i = 0 ; i< n ;i++){
+    cin >> arr[i];
+   }
+
+   sort(arr.begin(),arr.end());
+
+   for(int num : arr){
+    cout << num << " ";
+   }
+
+
+}
+
+
+.............................................................................................................
+
+
+
