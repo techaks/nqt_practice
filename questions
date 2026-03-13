@@ -346,6 +346,62 @@ int main() {
 .......................................................................
 
 
+A mall has a parking lot represented as a grid of R×C parking spaces,
+where R is the number of rows and C is the number of columns in the parking lot. Each parking space is either: 0,1
+
+Your task is to find the index of the row in the parking lot matrix that has the highest number of occupied parking spaces (1s).
+If multiple rows have the same number of occupied spaces, return the index of the first such row. 
+
+
+#include <bits/stdc++.h>
+using namespace std;
+using namespace std;
+
+int rowWithMaxOnes(int R, int C, vector<vector<int>> &M) {
+    int maxCount = -1;
+    int rowIndex = 0;
+
+    for (int i = 0; i < R; i++) {
+        int count = 0;
+
+        for (int j = 0; j < C; j++) {
+            if (M[i][j] == 1) {
+                count++;
+            }
+        }
+
+        if (count > maxCount) {
+            maxCount = count;
+            rowIndex = i;
+        }
+    }
+
+    return rowIndex;
+}
+
+int main() {
+    int R, C;
+    cin >> R >> C;
+
+    vector<vector<int>> M(R, vector<int>(C));
+
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            cin >> M[i][j];
+        }
+    }
+
+    cout << rowWithMaxOnes(R, C, M) << endl;
+
+    return 0;
+}
+
+
+...........................................................................................................
+
+
+
+
 
 
 
