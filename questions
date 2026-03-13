@@ -259,3 +259,93 @@ int main() {
 
 
 ...........................................................................................................
+There are total n number of Monkeys sitting on the branches of a huge Tree. As travelers offer Bananas and Peanuts,
+the Monkeys jump down the Tree. If every Monkey can eat k Bananas and j Peanuts. If total m number of Bananas and p number of Peanuts are offered by travelers, 
+calculate how many Monkeys remain on the Tree after some of them jumped down to eat.
+At a time one Monkeys gets down and finishes eating and go to the other side of the road.
+The Monkey who climbed down does not climb up again after eating until the other Monkeys finish eating.
+Monkey can either eat k Bananas or j Peanuts. If for last Monkey there are less than k Bananas left on the ground or less than j Peanuts left on the ground,
+only that Monkey can eat Bananas(<k) along with the Peanuts(<j).
+Write code to take inputs as n, m, p, k, j and return  the number of Monkeys left on the Tree.
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    int n , k , j , m , p ;
+    cin >> n >> k >> j >> m >> p ;
+    // n - monkey number
+    // k - eatable banana
+    // j - eatable peanut
+    // m - total banana
+    // p - total peanut
+
+    int eaten = 0;
+
+    eaten += m/k;
+    m = m%k;
+
+    eaten += p/j;
+    p = m%j;
+
+    if(m || p){
+        eaten++;
+    }
+
+    cout << n-eaten;
+
+
+}
+
+
+
+.........................................................................................................................................
+
+
+Given an array of strings, find the longest common prefix string amongst them. If there is no common prefix, return an empty string. 
+
+Example:
+Input: ["flower","flow","flight"]
+Output: "fl"
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+string longestCommonPrefix(vector<string>& strs) {
+    if (strs.empty()) return "";
+    string prefix = "";
+
+    sort(strs.begin(),strs.end());
+
+    for(int i = 0 ; i<strs[0].size();i++){
+        if(strs[0][i] == strs[strs.size()-1][i]){
+            prefix+=strs[0][i];
+        }
+    }
+    
+    return prefix;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<string> strs(n);
+    for (int i = 0; i < n; i++) {
+        cin >> strs[i];
+    }
+    
+    cout << longestCommonPrefix(strs) << endl;
+    return 0;
+}
+
+.......................................................................
+
+
+
+
+
