@@ -200,5 +200,62 @@ int main()
 
 .............................................................................................................
 
+Given a string S of '*' and '# , the length of s is variable . the task iss to find minimum number of 
+'*' or '#' to make it valid.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    string s ;
+    cin >> s;
+
+    int star =0 , hash = 0;
+    for(char ch : s){
+        if(ch=='*')star++;
+        else hash++;
+    }
+
+    cout << star-hash;
 
 
+}
+
+..............................................................................................................................
+the task is to find the color(odd) of the baallonns which is present odd number of times in the 
+bunch of ballonns .
+
+If there is more than one odd ballonns , then print first odd ballon color , 
+if all are even , print "all are even"
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    string s ;
+    cin >> s;
+    unordered_map<char,int>mp;
+
+    for(char ch : s){
+        mp[ch]++;
+    }
+    char res = '\0';
+
+    for(char ch : s){
+        int freq = mp[ch];
+        if(freq%2 !=0) {
+            res = ch;
+            break;
+        }
+
+    }
+    if(res != '\0')cout << res;
+    else cout << "All are even";
+
+
+}
+
+
+...........................................................................................................
