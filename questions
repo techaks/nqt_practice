@@ -772,7 +772,35 @@ int main() {
 
 
 ................................................................................................................
+Problem Statement: Search an element in an array and return its position
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n ;
+    cin >> n ;
+    vector<int>arr(n);
+    for(int i =0 ; i< n ; i++){
+        cin >> arr[i];
+    }
+
+    int to_find;
+    cin>> to_find;
+
+    for(int i =0 ; i< n ; i++){
+        if(arr[i]==to_find){
+            cout << i;
+            break;
+        }
+    }
+
+    return 0;
+    
+
+
+
+}
 
 
 
