@@ -806,9 +806,182 @@ int main() {
 
 ................................................................................................................
 
+Problem Statement: Given an integer N, return true if it is a palindrome else return false.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n ;
+    cin >> n ;
+
+    string num = to_string(n);
+    int size = num.size();
+    bool check = true;
+    for(int i = 0 ; i< size/2 ; i++){
+        if(num[i] != num[size-1-i]){
+            cout << "NOT PALINDROME";
+            check = false;
+            break;
+        }
+    }
+
+    if(check) cout << "PALINDROME";
+   
+
+}
+
+
+
+................................................................................................................
+Problem Statement: Given a range of numbers, find all the palindrome numbers in the range.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool func(int n){
+    string num = to_string(n);
+    int size = num.size();
+    
+    for(int i = 0 ; i< size/2 ; i++){
+        if(num[i] != num[size-1-i]){
+            return false;
+            
+        }
+    }
+
+   return true;
+}
+
+int main() {
+    int first , second ;
+    cin >> first >> second ;
+
+    for(int i = first ; i<=second ; i++){
+        if(func(i))cout<<i<<" ";
+    }
+
+    
+   
+
+}
+
+
+.................................................................................................
+
+Problem Statement: Write a program to find whether a number is a perfect number or not.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isPerfect(int n ){
+    int sum = 0;
+
+    for(int i = 1 ; i<= (n/2);i++){
+        if(n%i==0)sum+=i;
+    }
+    if(sum==n)return true;
+    return false;
+}
+ 
+int main() {
+   int num ;
+   cin >> num;
+
+   if(isPerfect(num)){
+    cout << num << " is a perfect number";
+   }else{
+    cout << num << " is a not perfect number";
+   }
+    
+   
+
+}
+
+.........................................................................................................
+
+
+Problem Statement: Given an A.P. Series, we need to find the sum of the Series.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ 
+int main() {
+   int n , a , d ;
+   cin >> n >> a >> d;
+    int sum = 0;
+    int it = a;
+   for(int i = 1 ; i<=n; i++){
+    sum += a;
+    a+=d;
+   }
+   cout<<sum;
+
+
+
+   
+
+}
 
 
 
 
 ................................................................................................................
-.................................................................................................
+
+
+
+................................................................................................................
+
+
+
+
+
+................................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+................................................................................................................
+
+
+
+
+
+
+
+................................................................................................................
+
+
+
+
+
+
+
+................................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
