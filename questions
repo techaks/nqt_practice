@@ -929,7 +929,30 @@ int main() {
 
 ................................................................................................................
 
+Program to find Sum of GP Series
 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ 
+int main() {
+    int n ;
+    cin >> n;
+   double  a , r ;
+   cin >> a >> r;
+
+    double sum = 0;
+    double term = a;
+   for(int i = 1 ; i<=n; i++){
+    sum += term;
+    term*=r;
+   }
+   cout<<sum;
+
+   
+
+}
 
 ................................................................................................................
 
