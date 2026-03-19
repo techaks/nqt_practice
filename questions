@@ -955,9 +955,39 @@ int main() {
 }
 
 ................................................................................................................
+Check if a number is Automorphic Number
+Problem Statement: Given a number, check if it is automorphic or not. A number is called an Automorphic number if and only if its square
+ends in the same digits as the number itself..
 
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int num ;
+   cin >> num;
+   int square = num*num;
+   string n1 = to_string(num);
+   string n2 = to_string(square);
 
+   int size1 = n1.size()-1;
+   int size2 = n2.size()-1;
 
+    bool isAutomorphic = true;
+   for(int i = size1 ; i>=0 ; i--){
+    if(n1[i] != n2[size2--]){
+       
+         isAutomorphic = false;
+        break;
+    }
+
+   }
+
+   if (isAutomorphic)
+        cout << "Yes Automorphic";
+    else
+        cout << "Not Automorphic";
+
+   
+}
 
 
 ................................................................................................................
