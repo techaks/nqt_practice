@@ -992,10 +992,33 @@ int main() {
 
 ................................................................................................................
 
+Problem Statement: Check if the number is a Harshad(or Niven) number or not.
 
 
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int num ;
+   cin >> num;
+   int temp = num;
+   int sum  = 0 ;
 
+   while(num){
+    sum+= num%10;
+    num/=10;
+   }
 
+    if (temp % sum == 0) {
+        cout << "YES it is Harshad Number" << "\n";  
+    }
+    else {
+        cout << "NO it is not Harshad Number" << "\n";  
+    }
+
+   
+
+   
+}
 
 
 
@@ -1003,8 +1026,46 @@ int main() {
 
 
 ................................................................................................................
+Convert Binary to Decimal
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int num;
+    cin >> num;
+
+    int res = 0;
+    int base = 1;
+
+    while (num) {
+        int digit = num % 10;
+        res += digit* base;
+        base*=2;            
+        num /= 10;
+    }
+
+    cout << res;
+}
 
 
+
+
+................................................................................................................
+ascci value
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main() {
+    char ch ;
+    cin >> ch;
+
+    cout << (int)ch;
+
+}
 
 
 
@@ -1012,17 +1073,37 @@ int main() {
 
 ................................................................................................................
 
+Problem Statement: Given a String, write a program to remove vowels from the String.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ bool check(char ch){
+    if(ch=='a' || ch=='e' || ch== 'i' || ch=='o' || ch=='u'){
+        return true;
+    }
+    return false;
+  }
+
+int main() {
+  string str ;
+  getline(cin , str);
+  string res = "";
+
+ 
+
+  for(char c : str){
+    if(check(c)){
+        continue;
+    }else{
+        res+=c;
+    }
+  }
 
 
+  cout << res;
 
-
-
-
-................................................................................................................
-
-
-
-
+}
 
 
 
