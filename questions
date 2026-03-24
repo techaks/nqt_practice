@@ -1108,6 +1108,47 @@ int main() {
 
 
 
+...................................................................................................
+ ballon fly weight find max people can fly
+
+5 10 2 8 30 90 40  --  3
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n ;
+  cin>>n;
+  vector<int>arr;
+    int num;
+  for(int i = 0 ; i<n ; i++){
+
+    cin>>num;
+    arr.push_back(num);
+  }
+
+ int maxW ;
+ cin>>maxW;
+ int res = 0;
+ sort(arr.begin(),arr.end());
+
+ for(int it : arr){
+    if(maxW>= it){
+        maxW-=it;
+        res++;
+    }else break;
+ }
+
+
+cout<<res;
+
+
+    return 0;
+}
+
+
+.........................................................
+
 
 
 
